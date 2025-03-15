@@ -10,7 +10,6 @@ from keyboards.inline.inlinekey import til
 
 @dp.callback_query_handler(text="uz")
 async def til_uz(call: CallbackQuery):
-    print(call.data)
     lang = call.data
     db.update_user_lang(lang=lang, chat_id=call.from_user.id)
     #user = db.select_user(chat_id=call.from_user.id)
@@ -23,7 +22,6 @@ async def til_uz(call: CallbackQuery):
 
 @dp.callback_query_handler(text="en")
 async def til_en(call: CallbackQuery):
-    print(call.data)
     lang = call.data
     db.update_user_lang(lang=lang, chat_id=call.from_user.id)
     #user = db.select_user(chat_id=call.from_user.id)
@@ -35,7 +33,6 @@ async def til_en(call: CallbackQuery):
 
 @dp.callback_query_handler(text="ru")
 async def til_ru(call: CallbackQuery):
-    print(call.data)
     lang = call.data
     db.update_user_lang(lang=lang, chat_id=call.from_user.id)
     #user = db.select_user(chat_id=call.from_user.id)

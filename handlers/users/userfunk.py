@@ -9,6 +9,7 @@ import logging
 from loader import db, dp
 from aiogram.types import CallbackQuery
 from .createshablon import Shablon
+from .toshkentish import ShablonT
 
 
 
@@ -37,10 +38,10 @@ async def create_img_user(call: CallbackQuery):
     user_id = call.from_user.id
     company = db.select_company(user_id=user_id)
     if company[4] == "True":
-        await call.message.answer("Elon Idisni kiriting!\nMisol: 22", reply_markup=orqaga)
+        await call.message.answer("Kasb nomini kiriting!", reply_markup=orqaga)
         await call.message.delete()
 
-        await Shablon.id.set()
+        await ShablonT.job.set()
     else:
         await call.message.answer("Sizning profilingiz activ emas. Adminga bog'laning!")
         await call.message.delete()

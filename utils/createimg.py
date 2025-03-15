@@ -20,12 +20,14 @@ def download_image_from_telegram(file_id, bot_token):
 
 
 def createshablon_funk(Id, jobs, holat, kompany, salarys,chat_id):
-    company = db.select_company(user_id=chat_id)
-    if company:
-        fileid = company[6]
-    else:
-        for i in db.select_all_templatetest():
-            fileid = i[0]
+    # company = db.select_company(user_id=chat_id)
+    # if company:
+    #     fileid = company[6]
+    # else:
+    #     for i in db.select_all_templatetest():
+    #         fileid = i[0]
+    for i in db.select_all_templatetest():
+        fileid = i[0]
 
 
     bot_token=config.BOT_TOKEN
