@@ -12,7 +12,6 @@ import os
 def download_image_from_telegram(file_id, bot_token):
     url = f'https://api.telegram.org/bot{bot_token}/getFile?file_id={file_id}'
     response = requests.get(url)
-    print(response.json())
     file_path = response.json()['result']['file_path']
     
     image_url = f'https://api.telegram.org/file/bot{bot_token}/{file_path}'
@@ -27,7 +26,6 @@ def download_image_from_telegram(file_id, bot_token):
 
 
 def createshablon_funk_toshish(jobs, holat, salarys,kompany,chat_id):
-    print(f"Jobs: {jobs}, Holat: {holat}, Salarys: {salarys}, kompany: {kompany}")
 
 
     # BASE_DIR = os.path.dirname(os.path.abspath(__file__))

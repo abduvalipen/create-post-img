@@ -10,7 +10,6 @@ from loader import db
 def download_image_from_telegram(file_id, bot_token):
     url = f'https://api.telegram.org/bot{bot_token}/getFile?file_id={file_id}'
     response = requests.get(url)
-    print(response.json())
     file_path = response.json()['result']['file_path']
     
     image_url = f'https://api.telegram.org/file/bot{bot_token}/{file_path}'
